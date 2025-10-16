@@ -9,12 +9,22 @@ package model;
  * @author Mahasiswa
  */
 public class Anggota {
-    
-    public enum JenisKelamin{
+
+    public enum JenisKelamin {
         L, P
     }
+
     private String nama, alamat, telepon, email;
     private JenisKelamin jenisKelamin;
+    private int idAnggota;
+
+    public int getIdAnggota() {
+        return idAnggota;
+    }
+
+    public void setIdAnggota(int idAnggota) {
+        this.idAnggota = idAnggota;
+    }
 
     public String getNama() {
         return nama;
@@ -55,6 +65,5 @@ public class Anggota {
     public void setJenisKelamin(JenisKelamin jenisKelamin) {
         this.jenisKelamin = jenisKelamin;
     }
-            
-    
+
 }
