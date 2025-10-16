@@ -4,6 +4,8 @@
  */
 package aplikasiperpustakaanipbo;
 
+import view.MenuUtamaPerpustakaan;
+
 /**
  *
  * @author Mahasiswa
@@ -14,7 +16,8 @@ public class AplikasiPerpustakaanIPBO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MenuUtamaPerpustakaan objMenu = new MenuUtamaPerpustakaan();
+        objMenu.setVisible(true);
     }
     
 }
