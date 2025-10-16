@@ -4,13 +4,19 @@
  */
 package view;
 
+import controller.Controller_Anggota;
 import javax.swing.ButtonGroup;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Mahasiswa
  */
 public class FormAnggota extends javax.swing.JFrame {
+        controller.Controller_Anggota controller_Anggota;
+
 
     /**
      * Creates new form Anggota
@@ -21,6 +27,12 @@ public class FormAnggota extends javax.swing.JFrame {
         ButtonGroup bg = new ButtonGroup();
         bg.add(rbLaki);
         bg.add(rbPerempuan);
+        
+        setTitle("Entri Data Mahasiswa");
+        setSize(450, 350);
+        setLocationRelativeTo(this);
+        controller_Anggota = new Controller_Anggota(this);
+        controller_Anggota.reset();
 
         setLocationRelativeTo(this);
     }
@@ -74,6 +86,11 @@ public class FormAnggota extends javax.swing.JFrame {
         rbPerempuan.setText("Perempuan");
 
         btnTambah.setText("Tambah");
+        btnTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahActionPerformed(evt);
+            }
+        });
 
         btnUbah.setText("Ubah");
 
@@ -174,6 +191,11 @@ public class FormAnggota extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+         controller_Anggota.insert();
+        controller_Anggota.reset();
+    }//GEN-LAST:event_btnTambahActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -208,6 +230,34 @@ public class FormAnggota extends javax.swing.JFrame {
                 new FormAnggota().setVisible(true);
             }
         });
+    }
+
+    public JTable getTable() {
+        return table;
+    }
+
+    public JTextArea getTxtAlamat() {
+        return txtAlamat;
+    }
+
+    public JTextField getTxtNama() {
+        return txtNama;
+    }
+
+    public JTextField getTxtTelepon() {
+        return txtTelepon;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public javax.swing.JRadioButton getRbLaki() {
+        return rbLaki;
+    }
+
+    public javax.swing.JRadioButton getRbPerempuan() {
+        return rbPerempuan;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

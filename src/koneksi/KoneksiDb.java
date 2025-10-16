@@ -21,8 +21,8 @@ public class KoneksiDb {
             try {
                 driver = "com.mysql.cj.jdbc.Driver";
                 database = "jdbc:mysql://localhost:3306/db_perpus";
-                user = "root";
-                pass = "";
+                user = "lotso";
+                pass = "123";
 
                 Class.forName(driver);
                 c = DriverManager.getConnection(database, user, pass);
